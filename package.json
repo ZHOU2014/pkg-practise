@@ -15,8 +15,7 @@
   "lint-staged": {
     "packages/**/*.{js,ts}": [
       "eslint packages/**/*.{js,ts} --color --fix"
-    ],
-    "packages/**/*.{less,css}": ["stylelint packages/**/*.{less,css} --fix"]
+    ]
   },
   "author": "",
   "license": "ISC",
