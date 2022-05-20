@@ -4,18 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint packages/**/*.{js,ts} --color --fix",
+    "eslint:lint": "eslint packages/**/*.{js,ts} --color --fix",
     "style:lint": "stylelint packages/**/*.{css,less} --fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint packages/**/*.{js,ts} --color --fix"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "packages/**/*.{js,ts}": [
       "eslint packages/**/*.{js,ts} --color --fix"
-    ]
+    ],
+    "packages/**/*.{less,css}": ["stylelint packages/**/*.{less,css} --fix"]
   },
   "author": "",
   "license": "ISC",
@@ -23,11 +24,11 @@
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
-    "husky": "^4.2.5",
+    "husky": "^8.0.1",
     "lerna": "^4.0.0",
-    "lint-staged": "^10.1.7",
-    "stylelint": "^13.3.3",
-    "stylelint-config-standard": "^20.0.0",
+    "lint-staged": "^12.4.1",
+    "stylelint": "^14.8.2",
+    "stylelint-config-standard": "^25.0.0",
     "typescript": "^4.6.4"
   }
 }
