@@ -15,6 +15,9 @@
   "lint-staged": {
     "packages/**/*.{js,ts}": [
       "eslint packages/**/*.{js,ts} --color --fix"
+    ],
+    "packages/**/*.{less,css}": [
+      "stylelint packages/**/*.{less,css} --fix"
     ]
   },
   "author": "",
@@ -23,7 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
-    "husky": "^8.0.1",
+    "husky": "^3.1.0",
     "lerna": "^4.0.0",
     "lint-staged": "^12.4.1",
     "stylelint": "^14.8.2",
