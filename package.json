@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "eslint:lint": "eslint packages/**/*.{js,ts} --color --fix",
-    "style:lint": "stylelint packages/**/*.{css,less} --fix"
+    "style:lint": "stylelint packages/**/*.{css,less} --fix",
+    "cz": "git-cz"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -20,11 +22,20 @@
       "stylelint packages/**/*.{less,css} --fix"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.15.0",
     "husky": "^3.1.0",
     "lerna": "^4.0.0",

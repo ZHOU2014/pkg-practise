@@ -1,4 +1,7 @@
 node_modules/
 __tests__/
 lib/
+.eslintrc.js
+.stylelintrc.js
+commitlint.config.js
 
