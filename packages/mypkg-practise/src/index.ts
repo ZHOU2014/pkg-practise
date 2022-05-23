@@ -1,2 +1,2 @@
-const b = 5;
-console.log(b);
+const b = 5
+console.log(b)
