@@ -4,4 +4,6 @@ lib/
 .eslintrc.js
 .stylelintrc.js
 commitlint.config.js
+build.config.js
+build.js
 

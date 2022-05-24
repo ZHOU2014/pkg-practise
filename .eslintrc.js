@@ -3,14 +3,19 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:vue/essential',
+    'plugin:prettier/recommended',
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "vue-eslint-parser",
   parserOptions: {
+    parser: "@typescript-eslint/parser",
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'error',
+    eqeqeq: 'error',
+  },
 };
