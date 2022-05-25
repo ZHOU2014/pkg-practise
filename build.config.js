@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const allEntries = glob.sync(path.resolve(__dirname, 'packages/*', 'index.js'));
 const entry = {};
@@ -13,10 +14,24 @@ allEntries.forEach((e) => {
     }
 });
 
+const commonCssLoader = ['css-loader', 'postcss-loader'];
+const plugins = [new VueLoaderPlugin()];
+
+if (process.env.NODE_ENV === 'production') {
+    commonCssLoader.unshift(MiniCssExtractPlugin.loader);
+    plugins.push(
+        new MiniCssExtractPlugin({
+            filename: "[name]/lib/style.css",
+        })
+    )
+} else {
+    commonCssLoader.unshift('style-loader');
+}
+
 module.exports = {
     entry: entry,
     mode: 'production',
-    externals: ['vue'],
+    externals: ['vue', 'axios'],
     output: {
         filename: '[name]/lib/index.js',
         path: path.resolve(__dirname, 'packages'),
@@ -32,25 +47,34 @@ module.exports = {
     module: {
         rules: [
             {
+                oneOf: [
+                    {
+                        test: /\.css$/,
+                        use: [...commonCssLoader]
+                    },
+                    {
+                        test: /\.less$/,
+                        use: [...commonCssLoader, 'less-loader']
+                    }
+                ]
+            },
+            {
                 test: /\.js$/,
                 loader: 'babel-loader'
             },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
                 
             },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-plain-loader'
             }
         ]
     },
-    plugins: [
-        new VueLoaderPlugin()
-    ]
+    plugins: plugins
 };

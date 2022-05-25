@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
+    "dev": "cross-env NODE_ENV=development webpack -c build.config.js --watch --progress",
+    "build": "cross-env NODE_ENV=production node build.js",
     "pub": "npm run build && lerna publish --skip-git",
     "eslint:lint": "eslint packages/**/*.{js,ts} --color --fix",
     "style:lint": "stylelint packages/**/*.{css,less} --fix",
@@ -43,6 +44,7 @@
     "@typescript-eslint/parser": "^5.25.0",
     "babel-loader": "^8.2.5",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
