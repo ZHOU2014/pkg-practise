@@ -1,7 +1,7 @@
 <template>
   <div class="button">
-    <div class="parent-button">父级按钮{{ name }}</div>
-    <div class="child-button">子级按钮{{ name }}</div>
+    <div class="parent-button">父级按钮1{{ name }}</div>
+    <div class="child-button">子级按钮1{{ name }}</div>
   </div>
 </template>
 

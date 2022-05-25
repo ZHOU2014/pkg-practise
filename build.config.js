@@ -17,6 +17,8 @@ allEntries.forEach((e) => {
 const commonCssLoader = ['css-loader', 'postcss-loader'];
 const plugins = [new VueLoaderPlugin()];
 
+console.log(process.env.NODE_ENV);
+
 if (process.env.NODE_ENV === 'production') {
     commonCssLoader.unshift(MiniCssExtractPlugin.loader);
     plugins.push(
