@@ -1,0 +1,18 @@
+.button[data-v-0bbc3f18] {
+  background: #0f0;
+}
+.button .parent-button[data-v-0bbc3f18] {
+  color: #00f;
+  font-size: 25px;
+}
+
+
+.child-button[data-v-0bbc3f18] {
+  color: #f00;
+  font-size: 17px;
+}
+
+div[data-v-a39eda62] {
+  color: #000;
+}
+
