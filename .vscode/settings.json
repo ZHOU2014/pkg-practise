@@ -2,4 +2,25 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
+    "terminal.integrated.profiles.windows": {
+      "gitBash": {
+        "path": "D:\\developer\\Git\\bin\\bash.exe", //这里是的的bash路径
+      },
+      "PowerShell": {
+        "source": "PowerShell",
+        "icon": "terminal-powershell"
+      },
+      "Command Prompt": {
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+        "source": "Git Bash"
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "gitBash",
 }
