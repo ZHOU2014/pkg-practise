@@ -10,6 +10,6 @@ export default {
 
 <style lang="less" scoped>
 .cinput {
-  background: #0f0;
+  color: #0f0;
 }
 </style>
