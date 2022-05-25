@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
-    "pub": "npm run build && lerna publish",
+    "pub": "npm run build && lerna publish --skip-git",
     "eslint:lint": "eslint packages/**/*.{js,ts} --color --fix",
     "style:lint": "stylelint packages/**/*.{css,less} --fix",
     "cz": "git-cz"
