@@ -41,6 +41,10 @@ module.exports = {
             name: '[name]',
             type: 'umd',
             export: 'default'
+        },
+        assetModuleFilename: (dataPath) => {
+            const packageName = dataPath.module.resourceResolveData.descriptionFileData.name;
+            return `${packageName}/lib/[hash][ext][query]`
         }
     },
     resolve: {
@@ -70,11 +74,19 @@ module.exports = {
                 options: {
                     appendTsSuffixTo: [/\.vue$/]
                 }
-                
             },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.(gif|jpg|jpeg|png)$/,
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024 // 4kb
+                    }
+                }
             }
         ]
     },

@@ -2,6 +2,9 @@
   <div class="button">
     <div class="parent-button">父级按钮1{{ name }}</div>
     <div class="child-button">子级按钮1{{ name }}</div>
+    <div class="background"></div>
+    <img src="./22.jpg" alt="22" />
+    <img src="./1.jpg" alt="1" />
   </div>
 </template>
 
@@ -45,6 +48,13 @@ export default {
   .parent-button {
     color: #00f;
     font-size: 25px;
+  }
+
+  .background {
+    width: 300px;
+    height: 300px;
+    background: url('./3.jpg') no-repeat;
+    background-size: 100% 100%;
   }
 }
 </style>
