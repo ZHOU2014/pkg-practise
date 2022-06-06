@@ -1,6 +1,6 @@
 {
   "name": "comm-design-react",
-  "version": "0.0.3",
+  "version": "0.0.19",
   "description": "> TODO: description",
   "author": "zhoulongqiu <zhoulq@authine.com>",
   "homepage": "https://github.com/ZHOU2014/pkg-practise#readme",
@@ -22,5 +22,6 @@
   },
   "bugs": {
     "url": "https://github.com/ZHOU2014/pkg-practise/issues"
-  }
+  },
+  "gitHead": "ada3a74d2f7ec1ad836874dd51911a2b7c6147d6"
 }

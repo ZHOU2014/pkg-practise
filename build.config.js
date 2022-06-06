@@ -3,9 +3,11 @@ const glob = require('glob');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const allEntries = glob.sync(path.resolve(__dirname, 'packages/*', 'index.js'));
+const allEntries = glob.sync(path.resolve(__dirname, 'packages', 'comm-design-vue', 'src/*', 'index.js'));
 const entry = {};
-const entryReg = /\/packages\/([a-zA-Z0-9_-]+)\/index.js/;
+const entryReg = /\/packages\/comm-design-vue\/src\/([a-zA-Z0-9_-]+)\/index.js/;
+
+console.log(allEntries);
 
 allEntries.forEach((e) => {
     const packageNameR = e.match(entryReg);
@@ -17,13 +19,11 @@ allEntries.forEach((e) => {
 const commonCssLoader = ['css-loader', 'postcss-loader'];
 const plugins = [new VueLoaderPlugin()];
 
-console.log(process.env.NODE_ENV);
-
 if (process.env.NODE_ENV === 'production') {
     commonCssLoader.unshift(MiniCssExtractPlugin.loader);
     plugins.push(
         new MiniCssExtractPlugin({
-            filename: "[name]/lib/style.css",
+            filename: "lib/[name]/style.css",
         })
     )
 } else {
@@ -35,16 +35,16 @@ module.exports = {
     mode: 'production',
     externals: ['vue', 'axios'],
     output: {
-        filename: '[name]/lib/index.js',
-        path: path.resolve(__dirname, 'packages'),
+        filename: 'lib/[name]/index.js',
+        path: path.resolve(__dirname, 'packages', 'comm-design-vue'),
         library: {
             name: '[name]',
             type: 'umd',
             export: 'default'
         },
         assetModuleFilename: (dataPath) => {
-            const packageName = dataPath.module.resourceResolveData.descriptionFileData.name;
-            return `${packageName}/lib/[hash][ext][query]`
+            const filePath = dataPath.module.resourceResolveData.relativePath.match(/\.\/src\/([a-zA-Z0-9_-]+)\//);
+            return `lib/${filePath[1]}/[name][ext][query]`;
         }
     },
     resolve: {
@@ -56,27 +56,40 @@ module.exports = {
                 oneOf: [
                     {
                         test: /\.css$/,
+                        exclude: /node_modules/,
                         use: [...commonCssLoader]
                     },
                     {
                         test: /\.less$/,
+                        exclude: /node_modules/,
                         use: [...commonCssLoader, 'less-loader']
                     }
                 ]
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            cacheDirectory: true
+                        }
+                    },
+                ],
+                exclude: /node_modules/,
+                
             },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
+                exclude: /node_modules/,
                 options: {
                     appendTsSuffixTo: [/\.vue$/]
                 }
             },
             {
                 test: /\.vue$/,
+                exclude: /node_modules/,
                 loader: 'vue-loader'
             },
             {

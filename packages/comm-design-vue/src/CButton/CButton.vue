@@ -4,7 +4,6 @@
     <div class="child-button">子级按钮1{{ name }}</div>
     <div class="background"></div>
     <img src="./22.jpg" alt="22" />
-    <img src="./1.jpg" alt="1" />
   </div>
 </template>
 

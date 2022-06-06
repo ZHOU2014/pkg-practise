@@ -1,0 +1,20 @@
+.button[data-v-b526aa44] {
+  background: #0f0;
+}
+.button .parent-button[data-v-b526aa44] {
+  color: #00f;
+  font-size: 25px;
+}
+.button .background[data-v-b526aa44] {
+  width: 300px;
+  height: 300px;
+  background: url(../../lib/CButton/3.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+
+.child-button[data-v-b526aa44] {
+  color: #f00;
+  font-size: 17px;
+}
+
