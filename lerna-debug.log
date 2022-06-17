@@ -1,177 +1,21 @@
-0 warn deprecated --skip-git has been replaced by --no-git-tag-version --no-push
-1 silly argv {
-1 silly argv   _: [ 'publish' ],
-1 silly argv   composed: 'publish',
-1 silly argv   lernaVersion: '4.0.0',
-1 silly argv   '$0': 'node_modules\\lerna\\cli.js',
-1 silly argv   gitTagVersion: false,
-1 silly argv   'git-tag-version': false,
-1 silly argv   push: false
-1 silly argv }
-2 notice cli v4.0.0
-3 verbose rootPath D:\practice\pkg-practise
-4 verbose session 1fcd5d5e7ffaa3c4
-5 verbose user-agent lerna/4.0.0/node@v12.21.0+x64 (win32)
-6 silly argv {
-6 silly argv   _: [ 'publish' ],
-6 silly argv   composed: 'publish',
-6 silly argv   lernaVersion: '4.0.0',
-6 silly argv   gitTagVersion: false,
-6 silly argv   'git-tag-version': false,
-6 silly argv   push: false
-6 silly argv }
-7 verbose rootPath D:\practice\pkg-practise
-8 info current version 0.0.18
-9 notice FYI git repository validation has been skipped, please ensure your version bumps are correct
-10 silly hasTags
-11 verbose hasTags true
-12 silly git-describe.sync "v0.0.3-9-gada3a74-dirty" => {"lastTagName":"v0.0.3","lastVersion":"v0.0.3","refCount":"9","sha":"ada3a74","isDirty":true}
-13 info Looking for changed packages since v0.0.3
-14 silly checking diff packages/comm-design-react
-15 silly found diff in packages/comm-design-react/lib/index.js.map
-15 silly found diff in packages/comm-design-react/package.json
-16 verbose filtered diff [
-16 verbose filtered diff   'packages/comm-design-react/lib/index.js.map',
-16 verbose filtered diff   'packages/comm-design-react/package.json'
-16 verbose filtered diff ]
-17 silly checking diff packages/comm-design-vue
-18 silly found diff in packages/comm-design-vue/index.d.ts
-18 silly found diff in packages/comm-design-vue/index.js
-18 silly found diff in packages/comm-design-vue/lib/index.js
-18 silly found diff in packages/comm-design-vue/package-lock.json
-18 silly found diff in packages/comm-design-vue/package.json
-18 silly found diff in packages/comm-design-vue/src/Button/index.vue
-18 silly found diff in packages/comm-design-vue/src/CButton/1.jpg
-18 silly found diff in packages/comm-design-vue/src/CButton/22.jpg
-18 silly found diff in packages/comm-design-vue/src/CButton/3.jpg
-18 silly found diff in packages/comm-design-vue/src/Input/index.vue
-18 silly found diff in packages/comm-design-vue/src/test.ts
-19 verbose filtered diff [
-19 verbose filtered diff   'packages/comm-design-vue/index.d.ts',
-19 verbose filtered diff   'packages/comm-design-vue/index.js',
-19 verbose filtered diff   'packages/comm-design-vue/lib/index.js',
-19 verbose filtered diff   'packages/comm-design-vue/package-lock.json',
-19 verbose filtered diff   'packages/comm-design-vue/package.json',
-19 verbose filtered diff   'packages/comm-design-vue/src/Button/index.vue',
-19 verbose filtered diff   'packages/comm-design-vue/src/CButton/1.jpg',
-19 verbose filtered diff   'packages/comm-design-vue/src/CButton/22.jpg',
-19 verbose filtered diff   'packages/comm-design-vue/src/CButton/3.jpg',
-19 verbose filtered diff   'packages/comm-design-vue/src/Input/index.vue',
-19 verbose filtered diff   'packages/comm-design-vue/src/test.ts'
-19 verbose filtered diff ]
-20 verbose updated comm-design-react
-21 verbose updated comm-design-vue
-22 warn version Skipping working tree validation, proceed at your own risk
-23 info execute Skipping git tag/commit
-24 info execute Skipping git push
-25 info execute Skipping releases
-26 silly lifecycle No script for "preversion" in "pkg-practise", continuing
-27 silly lifecycle No script for "preversion" in "comm-design-react", continuing
-28 silly lifecycle No script for "preversion" in "comm-design-vue", continuing
-29 silly lifecycle No script for "version" in "comm-design-react", continuing
-30 silly lifecycle No script for "version" in "comm-design-vue", continuing
-31 silly lifecycle No script for "version" in "pkg-practise", continuing
-32 info publish Publishing packages to npm...
-33 info Verifying npm credentials
-34 verbose Retrieving npm user profile
-35 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 894ms
-36 silly npm profile get received {"tfa":false,"name":"longing","email":"394920293@qq.com","email_verified":true,"created":"2018-03-21T01:43:36.184Z","updated":"2022-04-01T06:40:04.525Z","cidr_whitelist":null}
-37 silly get npm username received {"username":"longing","tfa":false,"name":"longing","email":"394920293@qq.com","email_verified":true,"created":"2018-03-21T01:43:36.184Z","updated":"2022-04-01T06:40:04.525Z","cidr_whitelist":null}
-38 silly verifyNpmPackageAccess
-39 http fetch GET 200 https://registry.npmjs.org/-/org/longing/package?format=cli 811ms (cache updated)
-40 info Checking two-factor auth mode
-41 verbose Retrieving npm user profile
-42 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 293ms
-43 silly npm profile get received {"tfa":false,"name":"longing","email":"394920293@qq.com","email_verified":true,"created":"2018-03-21T01:43:36.184Z","updated":"2022-04-01T06:40:04.525Z","cidr_whitelist":null}
-44 silly 2FA false
-45 warn ENOLICENSE Packages comm-design-react and comm-design-vue are missing a license.
-45 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
-45 warn ENOLICENSE See https://choosealicense.com for additional guidance.
-46 silly getCurrentSHA
-47 verbose getCurrentSHA ada3a74d2f7ec1ad836874dd51911a2b7c6147d6
-48 silly lifecycle No script for "prepublish" in "pkg-practise", continuing
-49 silly lifecycle No script for "prepare" in "pkg-practise", continuing
-50 silly lifecycle No script for "prepublishOnly" in "pkg-practise", continuing
-51 silly lifecycle No script for "prepack" in "pkg-practise", continuing
-52 verbose pack-directory packages\comm-design-react
-53 verbose pack-directory packages\comm-design-vue
-54 silly lifecycle No script for "prepublish" in "comm-design-react", continuing
-55 silly lifecycle No script for "prepublish" in "comm-design-vue", continuing
-56 silly lifecycle No script for "prepare" in "comm-design-react", continuing
-57 silly lifecycle No script for "prepare" in "comm-design-vue", continuing
-58 silly lifecycle No script for "prepublishOnly" in "comm-design-react", continuing
-59 silly lifecycle No script for "prepublishOnly" in "comm-design-vue", continuing
-60 silly lifecycle No script for "prepack" in "comm-design-react", continuing
-61 silly lifecycle No script for "prepack" in "comm-design-vue", continuing
-62 silly lifecycle No script for "postpack" in "comm-design-react", continuing
-63 verbose packed packages\comm-design-react
-64 silly lifecycle No script for "postpack" in "comm-design-vue", continuing
-65 verbose packed packages\comm-design-vue
-66 silly lifecycle No script for "postpack" in "pkg-practise", continuing
-67 verbose publish comm-design-react
-68 verbose publish comm-design-vue
-69 http fetch PUT 200 https://registry.npmjs.org/comm-design-vue 2763ms
-70 silly lifecycle No script for "publish" in "comm-design-vue", continuing
-71 silly lifecycle No script for "postpublish" in "comm-design-vue", continuing
-72 success published comm-design-vue 0.0.19
-73 notice
-74 notice package: comm-design-vue@0.0.19
-75 notice === Tarball Contents ===
-76 notice 357B    lib/CButton/style.css
-76 notice 45B     lib/CInput/style.css
-76 notice 45.5kB  lib/CButton/1.jpg
-76 notice 45.5kB  src/CButton/1.jpg
-76 notice 883B    src/CButton/22.jpg
-76 notice 247.4kB lib/CButton/3.jpg
-76 notice 247.4kB src/CButton/3.jpg
-76 notice 3.1kB   lib/CButton/index.js
-76 notice 1.1kB   lib/CInput/index.js
-76 notice 293B    lib/index.js
-76 notice 62B     src/CButton/index.js
-76 notice 59B     src/CInput/index.js
-76 notice 737B    package.json
-76 notice 0B      src/CButton/style.less
-76 notice 136B    README.md
-76 notice 216B    index.d.ts
-76 notice 35B     src/test.ts
-76 notice 1.1kB   src/CButton/CButton.vue
-76 notice 193B    src/CInput/CInput.vue
-77 notice === Tarball Details ===
-78 notice name:          comm-design-vue
-78 notice version:       0.0.19
-78 notice filename:      comm-design-vue-0.0.19.tgz
-78 notice package size:  590.4 kB
-78 notice unpacked size: 594.1 kB
-78 notice shasum:        e8abb00d2281889b781baccd32a55430b90a28c6
-78 notice integrity:     sha512-iYpDDe+yKRUZr[...]1JrYRqduzM7bw==
-78 notice total files:   19
-79 notice
-80 silly FetchError: request to https://registry.npmjs.org/comm-design-react failed, reason: read ECONNRESET
-80 silly     at ClientRequest.<anonymous> (D:\practice\pkg-practise\node_modules\minipass-fetch\lib\index.js:110:14)
-80 silly     at ClientRequest.emit (events.js:314:20)
-80 silly     at TLSSocket.socketErrorListener (_http_client.js:427:9)
-80 silly     at TLSSocket.emit (events.js:326:22)
-80 silly     at emitErrorNT (internal/streams/destroy.js:92:8)
-80 silly     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
-80 silly     at processTicksAndRejections (internal/process/task_queues.js:84:21)
-80 silly  FetchError: request to https://registry.npmjs.org/comm-design-react failed, reason: read ECONNRESET
-80 silly     at ClientRequest.<anonymous> (D:\practice\pkg-practise\node_modules\minipass-fetch\lib\index.js:110:14)
-80 silly     at ClientRequest.emit (events.js:314:20)
-80 silly     at TLSSocket.socketErrorListener (_http_client.js:427:9)
-80 silly     at TLSSocket.emit (events.js:326:22)
-80 silly     at emitErrorNT (internal/streams/destroy.js:92:8)
-80 silly     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
-80 silly     at processTicksAndRejections (internal/process/task_queues.js:84:21) {
-80 silly   code: 'ECONNRESET',
-80 silly   errno: 'ECONNRESET',
-80 silly   syscall: 'read',
-80 silly   type: 'system'
-80 silly }
-81 error ECONNRESET request to https://registry.npmjs.org/comm-design-react failed, reason: read ECONNRESET
-82 error FetchError: request to https://registry.npmjs.org/comm-design-react failed, reason: read ECONNRESET
-82 error     at ClientRequest.<anonymous> (D:\practice\pkg-practise\node_modules\minipass-fetch\lib\index.js:110:14)
-82 error     at ClientRequest.emit (events.js:314:20)
-82 error     at TLSSocket.socketErrorListener (_http_client.js:427:9)
-82 error     at TLSSocket.emit (events.js:326:22)
-82 error     at emitErrorNT (internal/streams/destroy.js:92:8)
-82 error     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': 'C:\\Users\\39492\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   name: 'comm-design-angular'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath D:\practice\pkg-practise
+3 error Error: canceled
+3 error     at Interface.<anonymous> (D:\practice\pkg-practise\node_modules\read\lib\read.js:66:13)
+3 error     at Interface.emit (events.js:314:20)
+3 error     at Interface._ttyWrite (readline.js:868:16)
+3 error     at ReadStream.onkeypress (readline.js:205:10)
+3 error     at ReadStream.emit (events.js:314:20)
+3 error     at emitKeys (internal/readline/utils.js:335:14)
+3 error     at emitKeys.next (<anonymous>)
+3 error     at ReadStream.onData (readline.js:1137:36)
+3 error     at ReadStream.emit (events.js:314:20)
+3 error     at addChunk (_stream_readable.js:297:12)
+3 error     at readableAddChunk (_stream_readable.js:272:9)
+3 error     at ReadStream.Readable.push (_stream_readable.js:213:10)
